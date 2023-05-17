@@ -63,7 +63,8 @@ export default class AirHockeyScene extends Progresser {
                     type: 'circle',
                     radius: 48
                 },
-                restitution: 1.0
+                restitution: 1.0,
+                slop: 0.0001,
             }
         )
         ball.setMass(100)
@@ -72,10 +73,10 @@ export default class AirHockeyScene extends Progresser {
         this.matter.world.setBounds(0, 0, 1920, 1080)
 
         this.pointers = [
-            this.add.circle(0, 0, 20, 0x5663FF).setAlpha(0),
-            this.add.circle(0, 0, 20, 0xF52E2E).setAlpha(0),
-            this.add.circle(0, 0, 20, 0x1F9E40).setAlpha(0),
-            this.add.circle(0, 0, 20, 0xFFC717).setAlpha(0)
+            this.add.circle(-3840, -2240, 20, 0x5663FF).setAlpha(0),
+            this.add.circle(-3840, -2240, 20, 0xF52E2E).setAlpha(0),
+            this.add.circle(-3840, -2240, 20, 0x1F9E40).setAlpha(0),
+            this.add.circle(-3840, -2240, 20, 0xFFC717).setAlpha(0)
         ]
 
         this.paddleConstraints = [
@@ -128,7 +129,7 @@ export default class AirHockeyScene extends Progresser {
             1,
             {
                 pointA: {
-                    x: 960, y: 0,
+                    x: -3840, y: -2240,
                 },
                 pointB: {
                     x: 0, y: y

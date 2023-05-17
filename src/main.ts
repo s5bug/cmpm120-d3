@@ -127,7 +127,9 @@ const game = new Phaser.Game({
             gravity: {
                 x: 0,
                 y: 0
-            }
+            },
+            positionIterations: 24,
+            velocityIterations: 8,
         }
     },
     input: {
